@@ -16,17 +16,17 @@ export class WcMenu extends HTMLElement {
 
   #render() {
     this.shadowRoot.innerHTML = `
-      <slot name="toggle">
+      <slot name="open">
         <button class="toggle">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
         </button>
-        <dialog>
-          <slot name="content"></slot>
-        </dialog>
       </slot>
-      
+      <dialog>
+        <slot name="content"></slot>
+      </dialog>
+    
       <style>
         .toggle {
           display: flex;
@@ -88,7 +88,7 @@ export class WcMenu extends HTMLElement {
   }
 
   #processOpen() {
-    const $toggleSlot = this.shadowRoot.querySelector('slot[name="toggle"]');
+    const $toggleSlot = this.shadowRoot.querySelector('slot[name="open"]');
 
     const $opener = $toggleSlot.assignedElements()[0] ?? $toggleSlot.children[0];
 

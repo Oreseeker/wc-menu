@@ -4,11 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Title</title>
+  <style>
+    .modal-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
 <wc-menu>
-  <div slot="content" style="background-color: red;">
-
+  <button slot="open">open</button>
+  <div slot="content" class="modal-content">
+    <ul>
+      <li>
+        <a href="#" data-close-trigger>Link 1</a>
+      </li>
+      <li>
+        <a href="#" data-close-trigger>Link 2</a>
+      </li>
+      <li>
+        <a href="#" data-close-trigger>Link 3</a>
+      </li>
+    </ul>
   </div>
 </wc-menu>
 <script type="module" src="/index.js"></script>

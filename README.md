@@ -11,7 +11,7 @@ npm i @oreseeker/wc-menu
 ## Usage
 ```html
 <wc-menu>
-  <button slot="toggle">Open</button>
+  <button slot="open">Open</button>
   <div slot="content"></div>
 </wc-menu>
 ```
