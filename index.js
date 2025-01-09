@@ -40,6 +40,8 @@ export class WcMenu extends HTMLElement {
           margin: 0;
           width: 100dvw;
           height: 100dvh;
+          max-width: 100dvw;
+          max-height: 100dvh;
           transform: translate(100%);
           transition: transform 200ms;
           padding: 0;
