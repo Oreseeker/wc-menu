@@ -59,16 +59,10 @@ export class WcMenu extends HTMLElement {
   }
 
   #processClose() {
-    const selector = `[${WcMenu.closeTriggerAttribute}]`;
     this.shadowRoot.querySelector('slot[name="content"]').assignedElements().forEach($e => {
-      if ($e.hasAttribute(WcMenu.closeTriggerAttribute)) {
-        $e.addEventListener('click', this.#close.bind(this));
-        return;
-      }
-
-      $e.querySelectorAll(selector).forEach($c => {
-        $c.addEventListener('click', this.#close.bind(this));
-      });
+      $e.addEventListener('click', (e) => {
+        if (e.composedPath().some($el => $el.hasAttribute?.(WcMenu.closeTriggerAttribute))) this.#close();
+      })
     });
   }
 
